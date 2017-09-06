@@ -1,12 +1,16 @@
-{% extends "songbook/base.html" %}
-
-{% block content %}
-	{% if title %}
-		<h1 style="text-align: center;">{{ title }}</h1>
-		<div style="page-break-before:always">&nbsp;</div>
-	{% endif %}
-	{% for song in songs %}
-		<pre>{{ song }}</pre>
-		<div style="page-break-before:always">&nbsp;</div> 
-	{% endfor %}
-{% endblock content %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+		{% if title %}
+			<h1 style="text-align: center;">{{ title }}</h1>
+			<div style="page-break-before:always">&nbsp;</div>
+		{% endif %}
+		{% for song in songs %}
+			<pre>{{ song|safe }}</pre>
+			<div style="page-break-before:always">&nbsp;</div> 
+		{% endfor %}
+	</body>
+</html>
