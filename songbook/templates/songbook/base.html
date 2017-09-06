@@ -1,0 +1,15 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>SongBook</title>
+        <link rel="stylesheet" href="{% static 'songbook/css/main.css' %}">
+        {% block header %}
+        {% endblock header %}
+    </head>
+    <body>
+        {% block content %}
+        {% endblock content %}
+    </body>
+</html>

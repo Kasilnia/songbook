@@ -1,0 +1,22 @@
+{% extends "songbook/base.html" %}
+
+{% block content %}
+	<h1>Create your SongBook:</h1>
+
+            <form action="{% url 'main:home' %}" class="form" method="post">
+	            {% csrf_token %}
+	            	<h3>Songbook General Tite</h3>
+	            	<input id="general_title" name="title" type="text">
+
+	            {% for single_form in form %}
+	            	{% for field in single_form %}
+	            		<h3>{{ field.label }}</h3>
+	            		<div class="field">{{ field }}</div>
+	            	{% endfor %}
+	            {% endfor %}
+	            {{ form.management_form }}
+	            <!-- <button type="submit" class="button" name="add">Add another song</button> -->
+	            <button type="submit" class="button" name="pdf">Generate PDF</button>
+	        </form>
+
+{% endblock content %}
